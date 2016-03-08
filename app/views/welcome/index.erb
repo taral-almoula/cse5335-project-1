@@ -78,7 +78,7 @@
         }
 
         function codeAddress(address) {
-            var address = document.getElementById("address").toString();
+            var address = address.toString();
             geocoder.geocode( { 'address': address}, function(results, status) {
                 if (status == google.maps.GeocoderStatus.OK) {
                     map.setCenter(results[0].geometry.location);
