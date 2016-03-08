@@ -25,6 +25,7 @@
                 background-color: white;
         }
     </style> 
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgv3ZYGpZTEpvnlzk1jQUGJdGKZnH8MbY"> </script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
@@ -35,6 +36,47 @@
         var xmlhttp = new XMLHttpRequest();
         var url = "https://cse5335-tsa6185.herokuapp.com/welcome/datasend";
         var myArr;
+
+        // Load the Visualization API and the piechart package.
+        google.charts.load('current', {'packages':['corechart']});
+
+        // Set a callback to run when the Google Visualization API is loaded.
+        google.charts.setOnLoadCallback(drawChart);
+
+        // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+        function drawChart() {
+
+        // Create our data table.
+        data = new google.visualization.DataTable();
+        data.addColumn('string', 'Gender');
+        
+        data.addRows([
+          ['Male'],
+          ['Male'],
+          ['Male'],
+          ['Male'],
+          ['Male'],
+          ['Male'],
+          ['Male'],
+          ['Female'],
+          ['Female'],
+          ['Female'],
+        ]);
+
+        // Set chart options
+        var options = {'title':'Gender distribution chart','width':400,'height':300};
+
+        // Instantiate and draw our chart, passing in some options.
+        chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+
+        }
+
+
+
+
 
         $(document).ready(function(){
             $('#button1').click(function(){
@@ -113,7 +155,8 @@
 
   <!-- <div id="map-canvas" style="float:left; width: 720px; height: 480px;"> </div> -->
     <p>
-    <div id="chart_div" bgcolor="#E6E6FA" style="float:right; height: 480px;"></div>
+  <!--   <div id="chart_div" bgcolor="#E6E6FA" style="float:right; height: 480px;"></div> -->
+    <div id="chart_div" style="width:400; height:300"></div>
     <div id="chart1_div" bgcolor="#E6E6FA" style="float:left; height: 480px;"></div>
     </p>
     </body>
