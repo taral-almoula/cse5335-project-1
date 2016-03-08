@@ -1,38 +1,5 @@
 <html>
 <head>
-  <!--  <style>
-        table{
-            border: 1px solid black;
-            background-color: white;
-        }
-        th{
-             border: 1px solid black;
-             border-collapse: collapse;
-             padding: 5px;
-             color: white;
-
-        }
-        td{
-                border: 1px solid black;
-                border-collapse: collapse;
-                padding: 5px;
-                color: black;
-        }
-        table tr:nth-child(odd) {
-                background-color: grey;
-        }
-        table tr:nth-child(even) {
-                background-color: white;
-        }
-    </style> -->
-
-
-    <body onload="initialize()" background="https://visualizingarchitecture.com/wp-content/uploads/2014/09/villa_Ortho_poster_300.jpg">
-    <font color="white">
-        <p> <h1> <center> List of my top 10 actors </center> </h1> </p>
-    <font color="black">
-        <center> <button id="button1">Click here to know</button> </center>
-    <p> </p>
     <style>
         table{
             border: 1px solid black;
@@ -57,24 +24,49 @@
         table tr:nth-child(even) {
                 background-color: white;
         }
-    </style>
-     <table >
-  <tr>
-    <th>Firstname</th>
-    <th>Lastname</th>
-    <th>Points</th>
-  </tr>
-  <tr>
-    <td>Eve</td>
-    <td>Jackson</td>
-    <td>94</td>
-  </tr>
-  <tr>
-    <td>Eve</td>
-    <td>Jackson</td>
-    <td>94</td>
-  </tr>
-</table> 
+    </style> 
+    <script type='text/javascript'>
+        
+        // Reference: http://www.w3schools.com/json/json_http.asp
+        
+        var xmlhttp = new XMLHttpRequest();
+        var url = "https://cse5335-tsa6185.herokuapp.com/welcome/datasend";
+        var myArr;
+
+        $(document).ready(function(){
+            $('#button1').click(function(){
+                function returnTable(arr){
+                    var out = "<table><tr><th>NAME</th><th>GENDER</th><th>ADDRESS</th><th>AGE</th></tr>";
+                    var i;
+
+                    for(i=0; i<arr.length ; i++){
+                        out += "<tr><td>" + arr[i].aname +
+                               "</td><td>" + arr[i].gender +
+                               "</td><td>" + arr[i].address +
+                               "</td><td>" + arr[i].age +
+                               "</td></tr>";
+                    }
+                    out += "</table>"        
+                    $("#button1").html(out)
+
+                    }
+            });
+        });
+        xmlhttp.open("GET", url, true);
+        xmlhttp.send();
+
+    </script>
+</head>
+
+
+
+    <body onload="initialize()" background="https://visualizingarchitecture.com/wp-content/uploads/2014/09/villa_Ortho_poster_300.jpg">
+    <font color="white">
+        <p> <h1> <center> List of my top 10 actors </center> </h1> </p>
+    <font color="black">
+        <center> <button id="button1">Click here to know</button> </center>
+    <p> </p>
+
     <div id="map-canvas" style="float:left; width: 720px; height: 480px;"> </div>
     <p>
     <div id="chart_div" bgcolor="#E6E6FA" style="float:right; height: 480px;"></div>
