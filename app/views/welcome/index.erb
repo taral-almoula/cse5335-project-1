@@ -51,6 +51,9 @@
                     }
                     out += "</table>"        
                     $("#button1").html(out)
+                    for (var i = 0; i < arr.length ; i++) {
+                        codeAddress(myArr[i].address);
+                    };
 
                     }
                 if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
