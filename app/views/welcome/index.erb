@@ -66,7 +66,7 @@
         var map;
         function initialize() {
             geocoder = new google.maps.Geocoder();
-            var latlng = new google.maps.LatLng(-34.397, 150.644);
+            var latlng = new google.maps.LatLng(32.7357, -97.1081);
             var mapOptions = {
                                 zoom: 8,
                                 center: latlng
@@ -102,7 +102,7 @@
     <font color="black">
         <center> <button id="button1">Click here to know</button> </center>
     <p> </p>
-    <div id="map" style="width: 600px; height: 480px; align: center"></div>
+    <div id="map" style="width: 600px; height: 480px; margin: 0 auto;"></div>
     <div>
     <input id="address" type="textbox" value="Arlington, TX">
     <input type="button" value="Encode" onclick="codeAddress()">
