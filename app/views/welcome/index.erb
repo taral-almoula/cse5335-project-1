@@ -73,7 +73,7 @@
 
                  // Set a callback to run when the Google Visualization API is loaded.
                 google.charts.setOnLoadCallback(drawChart);
-
+                google.charts.setOnLoadCallback(drawChart2);
                 // Callback that creates and populates a data table,
                 // instantiates the pie chart, passes in the data and
                 // draws it.
@@ -109,7 +109,7 @@
                         ['61-90',1],
                     ]);
 
-                    var options = {'title':'Gender distribution chart','width':400,'height':300};
+                    var options = {'title':'Age distribution chart','width':400,'height':300};
                     chart = new google.visualization.PieChart(document.getElementById('chart_div1'));
                     chart.draw(data, options);
 
