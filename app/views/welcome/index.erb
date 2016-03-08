@@ -37,35 +37,7 @@
         var url = "https://cse5335-tsa6185.herokuapp.com/welcome/datasend";
         var myArr;
 
-        // Load the Visualization API and the piechart package.
-        google.charts.load('current', {'packages':['corechart']});
-
-        // Set a callback to run when the Google Visualization API is loaded.
-        google.charts.setOnLoadCallback(drawChart);
-
-        // Callback that creates and populates a data table,
-      // instantiates the pie chart, passes in the data and
-      // draws it.
-        function drawChart() {
-
-        // Create our data table.
-        data = new google.visualization.DataTable();
-        data.addColumn('string', 'Gender');
-        data.addColumn('number','n')
-        data.addRows([
-          ['Male',7],
-          ['Female',3],
-         
-        ]);
-
-        // Set chart options
-        var options = {'title':'Gender distribution chart','width':400,'height':300};
-
-        // Instantiate and draw our chart, passing in some options.
-        chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-        chart.draw(data, options);
-
-        }
+       
 
 
 
@@ -94,6 +66,36 @@
                 if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                     myArr = JSON.parse(xmlhttp.responseText);
                     returnTable(myArr);
+                }
+
+                 // Load the Visualization API and the piechart package.
+                google.charts.load('current', {'packages':['corechart']});
+
+                 // Set a callback to run when the Google Visualization API is loaded.
+                google.charts.setOnLoadCallback(drawChart);
+
+                // Callback that creates and populates a data table,
+                // instantiates the pie chart, passes in the data and
+                // draws it.
+                function drawChart() {
+
+                // Create our data table.
+                data = new google.visualization.DataTable();
+                data.addColumn('string', 'Gender');
+                data.addColumn('number','n')
+                data.addRows([
+                  ['Male',7],
+                  ['Female',3],
+                 
+                ]);
+
+                // Set chart options
+                var options = {'title':'Gender distribution chart','width':400,'height':300};
+
+                // Instantiate and draw our chart, passing in some options.
+                chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+                chart.draw(data, options);
+
                 }
             });
         });
