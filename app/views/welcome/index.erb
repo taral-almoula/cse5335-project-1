@@ -97,6 +97,23 @@
                 chart.draw(data, options);
 
                 }
+
+                function drawChart2() {
+                    data = new google.visualization.DataTable();
+                    data.addColumn('string', 'Age');
+                    data.addColumn('number','m')
+                    data.addRows([
+                        ['0-20',0],
+                        ['21-40',5],
+                        ['41-60',4],
+                        ['61-90',1],
+                    ]);
+
+                    var options = {'title':'Gender distribution chart','width':400,'height':300};
+                    chart = new google.visualization.PieChart(document.getElementById('chart_div1'));
+                    chart.draw(data, options);
+
+                }
             });
         });
         xmlhttp.open("GET", url, true);
@@ -152,7 +169,7 @@
     <p>
   <!--   <div id="chart_div" bgcolor="#E6E6FA" style="float:right; height: 480px;"></div> -->
     <div id="chart_div" style="width:400; height:300"></div>
-    <div id="chart1_div" bgcolor="#E6E6FA" style="float:left; height: 480px;"></div>
+    <div id="chart_div1" style="float:left; height: 480px;"></div>
     </p>
     </body>
 </html>
