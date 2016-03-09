@@ -1,68 +1,35 @@
-# ruby-getting-started
+# Readme
 
-A barebones Rails app, which can easily be deployed to Heroku.
+## a. What server framework did you choose and why? 
+I chose Ruby-on-Rails. There are several reasons for it:
 
-This application support the [Getting Started with Ruby on Heroku](https://devcenter.heroku.com/articles/getting-started-with-ruby) article - check it out.
+  - Ruby-on-Rails follows MVC framework 
+  - It comes with several useful pre-installed modules which can be easily set up. It gives you a lot from the fresh install. In comparison, Node js gives you a bare minimum from a fresh install. 
+  - From studying the overview of both Ruby-on-Rails and Node js, I observed that Ruby-on-Rails is relatively easy to catch and learn.
+  - You can develop an app complete with database migrations in just a few commands via command line.
+  - It is open source and free. Good compatibility with Heroku.
 
-## Running Locally
+## b. What client framework did you choose and why?
+I chose jQuery. I found that in case of normal web page with less interactivity, jQuery is quick, simple and light compared to AngularJS and ReactJS. We had to build an app with less interactivity here and hence I chose jQuery.
 
-Make sure you have Ruby installed.  Also, install the [Heroku Toolbelt](https://toolbelt.heroku.com/).
+## c. What aspect of the implementation did you find easy, if any, and why?
+Calling JSON objects was simpler as I had studied and did it before. Also, the data need not be entered by the user. Hence, it was okay to hardcode it, which is relatively simple.
 
-```sh
-$ git clone git@github.com:heroku/ruby-getting-started.git
-$ cd ruby-getting-started
-$ bundle install
-$ bundle exec rake db:create db:migrate
-$ heroku local
-```
+## d. What aspect of the implementation did you find hard, if any, and why? 
+Installation of Ruby-on-Rails on heroku and getting started with it was the hard part. I faced many problems while installing. There were problems related to dependencies, version of Ruby, Gem files and database creation and migration. This all took me a while to set up.
 
-Your app should now be running on [localhost:5000](http://localhost:5000/).
+## e. What components OTHER than your client and server framework did you install, if any, and if so, what is their purpose for your solution?
+The only other component other than the client and server framework was the google API key. I had to get an API key which google generates for me when I create a project. I had to use this key for displaying the google maps on the web page.
 
-## Deploying to Heroku
-
-```sh
-$ heroku create
-$ git push heroku master
-$ heroku run rake db:migrate
-$ heroku open
-```
-
-or
-
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
-
-## Docker
-
-The app can be run and tested using the [Heroku Docker CLI plugin](https://devcenter.heroku.com/articles/introduction-local-development-with-docker).
-
-Make sure the plugin is installed:
-
-    heroku plugins:install heroku-docker
-
-Configure Docker and Docker Compose:
-
-    heroku docker:init
-
-And run the app locally:
-
-    docker-compose up web
-
-The app will now be available on the Docker daemon IP on port 8080.
-
-To work with the local database and do migrations, you can open a shell:
-
-    docker-compose run shell
-    bundle exec rake db:migrate
-
-You can also use Docker to release to Heroku:
-
-    heroku create
-    heroku docker:release
-    heroku open
-
-## Documentation
-
-For more information about using Ruby on Heroku, see these Dev Center articles:
-
-- [Ruby on Heroku](https://devcenter.heroku.com/categories/ruby)
+## f. What Ubuntu commands are required to deploy and run your server?
+After installing ruby on rails and heroku toolbelt, following commands were used:
+1) Create application: rails new application-name
+2) Run rails server: rails server
+3) Deploying application on Heroku: 
+- cd to your application
+- Run: git init
+- Run: git add .
+- Run: git commit -m "Demo message"
+- Run: git push heroku master
+- Run: heroku open
 

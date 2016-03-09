@@ -144,6 +144,7 @@
                 else {
                     alert("Geocode was not successful for the following reason: " + status);
                 }
+                // Reference: https://developers.google.com/maps/documentation/javascript/geocoding#GeocodingStatusCodes
             });
         }
 
@@ -153,7 +154,7 @@
 
 
 
-    <body onload="initialize()" background="https://visualizingarchitecture.com/wp-content/uploads/2014/09/villa_Ortho_poster_300.jpg">
+    <body onload="initialize()" background="https://www.planwallpaper.com/static/images/abstract-wallpaper-20.jpg">
     <font color="white">
         <p> <h1> <center> List of my top 10 actors </center> </h1> </p>
     <font color="black">
@@ -165,9 +166,8 @@
     <input type="button" value="Encode" onclick="codeAddress()" style="margin: 0 auto;">
     </div>
 
-  <!-- <div id="map-canvas" style="float:left; width: 720px; height: 480px;"> </div> -->
     <p>
-  <!--   <div id="chart_div" bgcolor="#E6E6FA" style="float:right; height: 480px;"></div> -->
+  
     <div id="chart_div" style="width:400; height:300"></div>
     <div id="chart_div1" style="float:left; height: 480px;"></div>
     </p>
